@@ -10,11 +10,11 @@ RUN apt-get install -y \
   openssh-client \
   sudo
 
-# create a buildslave user with sudo permissions & no password
-RUN useradd -ms /bin/bash buildslave && \
-    echo "buildslave ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/buildslave && \
-    chmod 0440 /etc/sudoers.d/buildslave
+# create a build-server user with sudo permissions & no password
+RUN useradd -ms /bin/bash build-server && \
+    echo "build-server ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/build-server && \
+    chmod 0440 /etc/sudoers.d/build-server
 
-# set the buildslave user as default
-USER buildslave
-WORKDIR /home/buildslave
+# set the build-server user as default
+USER build-server
+WORKDIR /home/build-server
