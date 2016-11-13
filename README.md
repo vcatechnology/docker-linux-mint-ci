@@ -1,13 +1,15 @@
-# Linux Mint CI Docker container
+# Linux Mint Docker CI Image
+
+[![](https://images.microbadger.com/badges/image/vcatechnology/linux-mint-ci.svg)](http://microbadger.com/images/vcatechnology/linux-mint-ci "Image Layers") [![](https://images.microbadger.com/badges/version/vcatechnology/linux-mint-ci.svg)](http://microbadger.com/images/vcatechnology/linux-mint-ci "Image Version") [![](https://images.microbadger.com/badges/license/vcatechnology/linux-mint-ci.svg)](https://microbadger.com/images/vcatechnology/linux-mint-ci "Image License")  [![](https://images.microbadger.com/badges/commit/vcatechnology/linux-mint-ci.svg)](https://github.com/vcatechnology/docker-linux-mint-ci "Image Commit")
 
 This container derives from
-[vcatechnology/linux-mint](https://hub.docker.com/r/vcatechnology/linux-mint) which is
-built daily for up-to-date packages. It also includes some useful development
-packages.
+[vcatechnology/linux-mint](https://hub.docker.com/r/vcatechnology/linux-mint) so that the
+image has the latest [Linux Mint](https://www.linuxmint.com/) packages. It then
+installs the some useful development packages.
 
-## Packages
+Available on Docker Hub as [vcatechnology/linux-mint-ci](https://hub.docker.com/r/vcatechnology/linux-mint-ci/)
 
-  - [`python`](https://packages.debian.org/search?suite=stable&keywords=python)
-  - [`git`](https://packages.debian.org/search?suite=stable&keywords=git)
-  - [`openssh-client`](https://packages.debian.org/search?suite=stable&keywords=openssh-client)
-  - [`sudo`](https://packages.debian.org/search?suite=stable&keywords=sudo)
+## `sudo`
+
+The Docker image creates a user account 'build-server' with `sudo` permissions. The `sudo` password
+is disabled to allow non-interactive sudo calls.
